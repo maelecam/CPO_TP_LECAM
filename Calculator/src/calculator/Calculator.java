@@ -59,5 +59,9 @@ public class Calculator {
             resultat = operande1 % operande2;
             System.out.println("Le resultat est " + resultat);
         }
+        if (operateur < 1 || operateur >5) {
+            System.out.println("La valeur n'est pas bonne ");
+            System.out.println("Veuillez en rentrer une autre ");
     }
+    }   
 }
