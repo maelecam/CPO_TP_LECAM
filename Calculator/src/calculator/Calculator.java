@@ -17,6 +17,14 @@ public class Calculator {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        int erreur;
+        Scanner sc4 = new Scanner(System.in);
+        System.out.println("Veillez rentrer un nombre inferieur a 1 ou superieur a 5 :");
+        erreur = sc4.nextInt();
+        if (erreur < 1 || erreur > 5) {
+            System.out.println("La valeur n'est pas bonne ");
+            System.out.println("Veuillez en rentrer une autre ");
+        }
         System.out.println("1) ADD"
                 + " 2) Substract"
                 + " 3) Multiply"
@@ -24,15 +32,15 @@ public class Calculator {
                 + " 5) modulo");
         int operateur;
         Scanner sc = new Scanner(System.in);
-        System.out.println("Please enter the number of the operator :");
+        System.out.println("Veillez saisir un nombre pour definir l'operateur :");
         operateur = sc.nextInt();
         int operande1;
         Scanner sc2 = new Scanner(System.in);
-        System.out.println("Veuiller saisir une première valeure :");
+        System.out.println("Veuiller saisir une premiere valeure :");
         operande1 = sc2.nextInt();
         int operande2;
         Scanner sc3 = new Scanner(System.in);
-        System.out.println("Veuiller saisir une deuxième valeure :");
+        System.out.println("Veuiller saisir une deuxieme valeure :");
         operande2 = sc3.nextInt();
         if (operateur == 1) {
             int resultat;
@@ -58,10 +66,6 @@ public class Calculator {
             float resultat;
             resultat = operande1 % operande2;
             System.out.println("Le resultat est " + resultat);
-        }
-        if (operateur < 1 || operateur >5) {
-            System.out.println("La valeur n'est pas bonne ");
-            System.out.println("Veuillez en rentrer une autre ");
+            }
     }
-    }   
 }
