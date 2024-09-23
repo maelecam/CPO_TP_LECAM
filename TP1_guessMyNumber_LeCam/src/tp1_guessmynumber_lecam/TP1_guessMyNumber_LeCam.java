@@ -18,6 +18,20 @@ public class TP1_guessMyNumber_LeCam {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        int saisie;
+        System.out.println("Saisissez le niveau de difficulté :");
+        System.out.println("1) Facile");
+        System.out.println("2) Normal");
+        System.out.println("3) Difficile");
+        Scanner sc1 = new Scanner(System.in);
+        System.out.println("Veillez saisir un nombre :");
+        saisie = sc1.nextInt();
+        switch (saisie){
+            case 1 : saisie = Facile(n); 
+            case 2 : saisie = CelciusVersFarenheit(valeur1);
+            case 3 : saisie = KelvinVersCelcius(valeur1);   
+    }
+    public static void facile(String[] args) {
       Random generateurAleat = new Random();  
       int n = generateurAleat.nextInt(100);
       int valeur;
