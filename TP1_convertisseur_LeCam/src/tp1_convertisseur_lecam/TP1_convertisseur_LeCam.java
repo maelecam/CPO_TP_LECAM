@@ -24,16 +24,22 @@ public class TP1_convertisseur_LeCam {
         double sauvegarde;
         sauvegarde = valeur1;
         int saisie;
-        System.out.println("Saisissez la conversion que vous souhaiter effectuer :");
-        System.out.println("1) De Celcius vers Kelvin");
-        System.out.println("2) De Kelvin vers Farenheit");
-        System.out.println("3) De Kelvin vers Celcius");
-        System.out.println("4) De Farenheit vers Celcius");
-        System.out.println("5) De Kelvin vers Farenheit");
-        System.out.println("6) De Farenheit vers Kelvin");
-        Scanner sc1 = new Scanner(System.in);
-        System.out.println("Veillez saisir un nombre :");
-        saisie = sc1.nextInt();
+        do {
+            System.out.println("Saisissez la conversion que vous souhaiter effectuer :");
+            System.out.println("1) De Celcius vers Kelvin");
+            System.out.println("2) De Kelvin vers Farenheit");
+            System.out.println("3) De Kelvin vers Celcius");
+            System.out.println("4) De Farenheit vers Celcius");
+            System.out.println("5) De Kelvin vers Farenheit");
+            System.out.println("6) De Farenheit vers Kelvin");
+            Scanner sc1 = new Scanner(System.in);
+            System.out.println("Veillez saisir un nombre :");
+            saisie = sc1.nextInt();
+            if (saisie < 1  || saisie > 6){
+                System.out.println("Saisie invalide.Veuillez choisir un nombre entre 1 et 6. ");
+            }
+        
+        } while (saisie < 1 || saisie > 6);
         switch (saisie){
             case 1 : valeur1 = CelciusVersKelvin(valeur1); 
             System.out.println(sauvegarde+"degré Celcius est égal à " +valeur1+" degré Kelvin"); break;
@@ -46,7 +52,7 @@ public class TP1_convertisseur_LeCam {
             case 5 : valeur1 = KelvinVersFahrenheit(valeur1);
             System.out.println(sauvegarde+"degré Kelvin est égal à " +valeur1+" degré Farenheit"); break;
             case 6 : valeur1 = FahrenheitVersKelvin(valeur1);
-            System.out.println(sauvegarde+"degré Farenheit est égal à " +valeur1+" degré Kelvin"); break;
+            System.out.println(sauvegarde+"degré Farenheit est égal à " +valeur1+" degré Kelvin"); break;                    
         }
     }
 
