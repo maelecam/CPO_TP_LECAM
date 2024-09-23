@@ -39,10 +39,7 @@ public class TP1_manipNombresInt_LeCam {
        quotient = entier1 / entier2;
        reste = entier1 % entier2;
        System.out.println("Voici le quotient des deux nombres : "+quotient);
-       System.out.println("et le reste de la division est : "+reste );
-       
-       
-       
+       System.out.println("et le reste de la division est : "+reste );   
     }
     
 }
