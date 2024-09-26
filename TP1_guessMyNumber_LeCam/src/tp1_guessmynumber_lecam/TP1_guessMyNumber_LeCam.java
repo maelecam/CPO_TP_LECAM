@@ -8,108 +8,81 @@ import java.util.Random;
 import java.util.Scanner;
 
 /**
- *23/09/2024
- * @author Mael Le Cam
- * TDA
+ * 23/09/2024
+ *
+ * @author Mael Le Cam TDA
  */
 public class TP1_guessMyNumber_LeCam {
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        int valeur1;
-        System.out.println("Saisissez le niveau de difficulté :");
-        System.out.println("1) Facile");
-        System.out.println("2) Normal");
-        System.out.println("3) Difficile");
-        Scanner sc1 = new Scanner(System.in);
-        System.out.println("Veillez saisir un nombre :");
-        saisie = sc1.nextInt();
-        switch (valeur1){
-            case 1 : valeur1= Facile(valeur1); 
-            case 2 : valeur1 = Normal(valeur1);
-            case 3 : valeur1 = Difficile(valeur1);   
-    }
-    public static void Facile(String[] args) {
-      Random generateurAleat = new Random();  
-      int n = generateurAleat.nextInt(100);
-      int valeur;
-      Scanner sc = new Scanner(System.in);
-      System.out.println("Veillez saisir un nombre compris entre 0 et 100 :");
-      valeur = sc.nextInt();
-      int compteur;
-      compteur = 0;
-      while ( n != valeur){
-        compteur = compteur + 1;
-        System.out.println("Nombre tentatives :"+compteur);
-        if (valeur > n){
-            System.out.println("trop grand");
-            System.out.println("Veillez saisir un nombre compris entre 0 et 100 :");
-            valeur = sc.nextInt();
-            compteur = compteur + 1;
-          } if ( valeur < n){
-            System.out.println("Trop petit");
-            System.out.println("Veillez saisir un nombre compris entre 0 et 100 :");
-            valeur = sc.nextInt();
-            } if (valeur == n){
-                System.out.println("gagne");
+    public class DevineLeNombre {
+        public static void main(String[] args) {
+            // Choisir le niveau de difficulté
+            System.out.println("Choisissez votre niveau de difficulté (1 pour facile, 2 pour normal, 3 pour difficile) :");
+            int niveauDeDifficulte = lireEntier();
+
+            // Définir les paramètres en fonction du niveau
+            int nombreMinimal, nombreMaximal, nombreEssaisMax;
+            switch (niveauDeDifficulte) {
+                case 1: // Niveau facile
+                    nombreMinimal = 1;
+                    nombreMaximal = 10;
+                    nombreEssaisMax = 5;
+                    break;
+                case 2: // Niveau normal
+                    nombreMinimal = 1;
+                    nombreMaximal = 100;
+                    nombreEssaisMax = 10;
+                    break;
+                case 3: // Niveau difficile
+                    nombreMinimal = 1;
+                    nombreMaximal = 1000;
+                    nombreEssaisMax = 15;
+                    break;
+                default: // Niveau par défaut si l'entrée est invalide
+                    System.out.println("Niveau invalide. Niveau normal choisi par défaut.");
+                    nombreMinimal = 1;
+                    nombreMaximal = 100;
+                    nombreEssaisMax = 10;
+                    break;
             }
-      } 
-    }
-    public static void Difficile(String[] args) {
-      Random generateurAleat = new Random();  
-      int n = generateurAleat.nextInt(100);
-      int valeur;
-      Scanner sc = new Scanner(System.in);
-      System.out.println("Veillez saisir un nombre compris entre 0 et 100 :");
-      valeur = sc.nextInt();
-      int compteur;
-      compteur = 20;
-      while ( n != valeur){
-        compteur = compteur - 1;
-        System.out.println("Nombre tentatives :" +compteur);
-        if (compteur == 0){
-            break;
+
+            // Générer un nombre aléatoire entre nombreMinimal et nombreMaximal
+            long tempsActuel = System.currentTimeMillis();
+            int nombreMystere = (int) (tempsActuel % (nombreMaximal - nombreMinimal + 1)) + nombreMinimal;
+
+            // Boucle de jeu
+            int essais = 0;
+            int proposition;
+            do {
+                System.out.print("Propose un nombre entre " + nombreMinimal + " et " + nombreMaximal + " : ");
+                proposition = lireEntier();
+                essais++;
+
+                if (proposition < nombreMystere) {
+                    System.out.println("C'est plus !");
+                } else if (proposition > nombreMystere) {
+                    System.out.println("C'est moins !");
+                } else {
+                    System.out.println("Félicitations ! Tu as trouvé le nombre en " + essais + " essais.");
+                }
+            } while (proposition != nombreMystere && essais < nombreEssaisMax);
+
+            if (proposition != nombreMystere) {
+                System.out.println("Dommage, tu n'as pas trouvé. Le nombre mystère était : " + nombreMystere);
+            }
         }
-        if (valeur > n){
-            System.out.println("trop grand");
-            System.out.println("Veillez saisir un nombre compris entre 0 et 100 :");
-            valeur = sc.nextInt();
-            compteur = compteur + 1;
-          } if ( valeur < n){
-            System.out.println("Trop petit");
-            System.out.println("Veillez saisir un nombre compris entre 0 et 100 :");
-            valeur = sc.nextInt();
-            } if (valeur == n){
-                System.out.println("gagne");
+
+        // Méthode pour lire un entier depuis la console
+        private static int lireEntier() {
+            try {
+                return Integer.parseInt(System.console().readLine());
+            } catch (NumberFormatException e) {
+                System.out.println("Entrée invalide. Veuillez entrer un nombre entier.");
+                return lireEntier();
             }
-      } 
-    }
-        public static void Normal(String[] args) {
-      Random generateurAleat = new Random();  
-      int n = generateurAleat.nextInt(100);
-      int valeur;
-      Scanner sc = new Scanner(System.in);
-      System.out.println("Veillez saisir un nombre compris entre 0 et 100 :");
-      valeur = sc.nextInt();
-      int compteur;
-      compteur = 0;
-      while ( n != valeur){
-        compteur = compteur + 1;
-        System.out.println("Nombre tentatives :"+compteur);
-        if (valeur > n){
-            System.out.println("trop grand");
-            System.out.println("Veillez saisir un nombre compris entre 0 et 100 :");
-            valeur = sc.nextInt();
-            compteur = compteur + 1;
-          } if ( valeur < n){
-            System.out.println("Trop petit");
-            System.out.println("Veillez saisir un nombre compris entre 0 et 100 :");
-            valeur = sc.nextInt();
-            } if (valeur == n){
-                System.out.println("gagne");
-            }
-      } 
+        }
     }
 }
