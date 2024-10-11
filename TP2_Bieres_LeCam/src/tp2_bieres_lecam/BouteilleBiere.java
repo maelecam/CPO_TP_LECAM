@@ -7,8 +7,9 @@ package tp2_bieres_lecam;
 import java.io.Console;
 
 /**
- *
- * @author 33604
+ *11/10/2024
+ * @author Le Cam mael
+ * TDA
  */
 public class BouteilleBiere {
 
@@ -18,10 +19,10 @@ public class BouteilleBiere {
     boolean ouverte;
 
     public void lireEtiquette() {
-        System.out.println("Bouteille de " + Nom + "(" + degreAlcool + "degres)\nBrasserie : " + brasserie);
+        System.out.println("Bouteille de " + Nom + " (" + degreAlcool + " degrés)\nBrasserie : " + brasserie + " et elle est : " + (ouverte ? "ouverte" : "fermée"));
     }
 
-    public BouteilleBiere(String unNom, double unDegre, String uneBrasserie) {
+    public BouteilleBiere(String unNom, double unDegre, String uneBrasserie, boolean ouverte) {
         String nom = unNom;
         degreAlcool = unDegre;
         brasserie = uneBrasserie;
@@ -33,7 +34,7 @@ public class BouteilleBiere {
             ouverte = false;
             return true;
         } else {
-            Console.WriteLine("Erreur : bière déjà ouverte");// erreur etape 13
+            System.out.println("Erreur : bière déjà ouverte");
             return false;
         }
     }
@@ -41,6 +42,7 @@ public class BouteilleBiere {
     @Override
     public String toString() {
         String chaine_a_retourner;
+        String nom = null;
         chaine_a_retourner = nom + " (" + degreAlcool + " degrés) Ouverte ? ";
         if (ouverte == true) {
             chaine_a_retourner += "oui";
@@ -51,4 +53,4 @@ public class BouteilleBiere {
     }
 }
 
-// finir etape 14 et 13 de cette exo
+// finir etape 14 et 
