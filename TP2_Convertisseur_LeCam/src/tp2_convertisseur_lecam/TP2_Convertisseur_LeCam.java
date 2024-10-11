@@ -35,6 +35,7 @@ public class TP2_Convertisseur_LeCam {
             System.out.println("4) De Farenheit vers Celcius");
             System.out.println("5) De Kelvin vers Farenheit");
             System.out.println("6) De Farenheit vers Kelvin");
+            System.out.println("Pour quitter le programme, saisir 0");
             Scanner sc1 = new Scanner(System.in);
             System.out.println("Veillez saisir un nombre :");
             saisie = sc1.nextInt();
@@ -68,7 +69,12 @@ public class TP2_Convertisseur_LeCam {
                 valeur1 = convertisseur1.FahrenheitVersKelvin(valeur1);
                 System.out.println(sauvegarde + "degré Farenheit est égal à " + valeur1 + " degré Kelvin");
                 break;
-        }
+            case 0:
+                System.out.println("Saisie invalide. Veuillez choisir un nombre entre 0 et 6.");
+                break;
+        } while (saisie != 0); // Condition pour sortir de la boucle si l'utilisateur saisit 0
+            sc.close(); // Fermeture du scanner
     }
-
 }
+    
+
