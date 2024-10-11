@@ -4,6 +4,8 @@
  */
 package tp2_convertisseur_lecam;
 
+import java.util.Scanner;
+
 /**
  *
  * @author 33604
@@ -14,8 +16,11 @@ public class TP2_Convertisseur_LeCam {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        class convertisseur {
-            double valeur1;
+        Convertisseur monConvertisseur = new Convertisseur();
+
+        // Conversion d'exemples
+        Convertisseur convertisseur1 = new Convertisseur();
+        double valeur1;
         Scanner sc = new Scanner(System.in);
         System.out.println("Veillez saisir un nombre :");
         valeur1 = sc.nextDouble();
@@ -40,62 +45,30 @@ public class TP2_Convertisseur_LeCam {
         } while (saisie < 1 || saisie > 6);
         switch (saisie) {
             case 1:
-                valeur1 = CelciusVersKelvin(valeur1);
+                valeur1 = convertisseur1.CelciusVersKelvin(valeur1);
                 System.out.println(sauvegarde + "degré Celcius est égal à " + valeur1 + " degré Kelvin");
                 break;
             case 2:
-                valeur1 = CelciusVersFarenheit(valeur1);
+                valeur1 = convertisseur1.CelciusVersFarenheit(valeur1);
                 System.out.println(sauvegarde + "degré Celcius est égal à " + valeur1 + " degré Farenheit");
                 break;
             case 3:
-                valeur1 = KelvinVersCelcius(valeur1);
+                valeur1 = convertisseur1.KelvinVersCelcius(valeur1);
                 System.out.println(sauvegarde + "degré Kelvin est égal à " + valeur1 + " degré Celcius");
                 break;
             case 4:
-                valeur1 = FarenheitVersCelcius(valeur1);
+                valeur1 = convertisseur1.FarenheitVersCelcius(valeur1);
                 System.out.println(sauvegarde + "degré Farenheit est égal à " + valeur1 + " degré Celcius");
                 break;
             case 5:
-                valeur1 = KelvinVersFahrenheit(valeur1);
+                valeur1 = convertisseur1.KelvinVersFahrenheit(valeur1);
                 System.out.println(sauvegarde + "degré Kelvin est égal à " + valeur1 + " degré Farenheit");
                 break;
             case 6:
-                valeur1 = FahrenheitVersKelvin(valeur1);
+                valeur1 = convertisseur1.FahrenheitVersKelvin(valeur1);
                 System.out.println(sauvegarde + "degré Farenheit est égal à " + valeur1 + " degré Kelvin");
                 break;
         }
     }
 
-    public static double CelciusVersKelvin(double tCelcius) {
-        tCelcius = tCelcius + 273.15;
-        return tCelcius;
-    }
-
-    public static double CelciusVersFarenheit(double tCelcius) {
-        tCelcius = tCelcius * 33.8;
-        return tCelcius;
-    }
-
-    public static double KelvinVersCelcius(double tKelvin) {
-        tKelvin = tKelvin - 273.15;
-        return tKelvin;
-    }
-
-    public static double FarenheitVersCelcius(double tFaren) {
-        tFaren = tFaren / 33.8;
-        return tFaren;
-    }
-
-    public static double KelvinVersFahrenheit(double tKelvin) {
-        tKelvin = tKelvin / 255.93;
-        return tKelvin;
-    }
-
-    public static double FahrenheitVersKelvin(double tFaren) {
-        tFaren = tFaren * 255.93;
-        return +tFaren;
-    }
-        }
-    }
-    
 }
