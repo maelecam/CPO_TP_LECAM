@@ -21,7 +21,7 @@ public class Convertisseur {
         return tCelcius;
     }
 
-    public static double CelsiusVersFahrenheit(double tCelcius) {
+    public static double CelciusVersFarenheit(double tCelcius) {
         tCelcius = tCelcius * 33.8;
         return tCelcius;
     }
@@ -31,7 +31,7 @@ public class Convertisseur {
         return tKelvin;
     }
 
-    public static double FahrenheitVersCelsius(double tFaren) {
+    public static double FarenheitVersCelcius(double tFaren) {
         tFaren = tFaren / 33.8;
         return tFaren;
     }
