@@ -11,10 +11,14 @@ package tp2_relation_1_lecam;
 public class Personne {
     String nom;
     String prenom;
+    int nbVoitures;
+    Voiture [] liste_voitures;
 
     public Personne(String nom, String prenom) {
         this.nom = nom;
         this.prenom = prenom;
+        liste_voitures = new Voiture [3];
+        int nombreDeVoituresPossedees = 0;      
     }
 
     @Override
