@@ -14,8 +14,9 @@ public class Convertisseur {
 
     public Convertisseur() {
         nbConversions = 0;
+        
     }
-
+    
     public double CelciusVersKelvin(double tCelcius) {
         tCelcius = tCelcius + 273.15;
         return tCelcius;
@@ -23,6 +24,7 @@ public class Convertisseur {
 
     public double CelciusVersFarenheit(double tCelcius) {
         tCelcius = tCelcius * 33.8;
+        
         return tCelcius;
     }
 
@@ -48,6 +50,7 @@ public class Convertisseur {
 
     @Override
     public String toString() {
-        return ("nb de conversions" + nbConversions);
+        nbConversions = nbConversions + 1;
+        return (""+ nbConversions);
     }
 }
