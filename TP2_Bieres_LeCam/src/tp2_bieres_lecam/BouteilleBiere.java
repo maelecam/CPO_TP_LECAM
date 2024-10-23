@@ -52,5 +52,3 @@ public class BouteilleBiere {
         return chaine_a_retourner;
     }
 }
-
-// finir etape 14 et 
