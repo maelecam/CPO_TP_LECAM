@@ -12,16 +12,18 @@ public class Voiture {
     String Modele;
     String Marque;
     int PussanceCV;
+    Personne proprietaire ;
 
     public Voiture(String Modele, String Marque, int PussanceCV) {
         this.Modele = Modele;
         this.Marque = Marque;
         this.PussanceCV = PussanceCV;
+        this.proprietaire = null;
     }
 
     @Override
     public String toString() {
-        return "Voiture{" + "Modele=" + Modele + ", Marque=" + Marque + ", PussanceCV=" + PussanceCV + '}';
+        return "Voiture{" + "Modele=" + Modele + ", Marque=" + Marque + ", PussanceCV=" + PussanceCV +'}';
     }
     
 }
