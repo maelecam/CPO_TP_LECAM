@@ -10,9 +10,9 @@ package Armes;
  */
 public class Arme {
     private String nom;
-    private int NiveauAttaque ;
+    private double NiveauAttaque ;
 
-    public Arme(String nom, int Attaque) {
+    public Arme(String nom, double Attaque) {
         this.nom = nom;
         this.NiveauAttaque = NiveauAttaque;
         if (NiveauAttaque <= 100){
