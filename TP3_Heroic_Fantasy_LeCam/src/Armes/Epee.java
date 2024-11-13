@@ -11,7 +11,7 @@ import Armes.Arme;
  * @author 33604
  */
 public class Epee extends Arme {
-    private int finesse;
+    private double finesse;
 
     public Epee(String nom, int Attaque, int finesse) {
         super(nom, Attaque);
@@ -22,7 +22,7 @@ public class Epee extends Arme {
             this.finesse = 99;
         }
     }
-    public int finesseEpee(){
+    public double finesseEpee(){
         return finesse;
     }
     @Override
