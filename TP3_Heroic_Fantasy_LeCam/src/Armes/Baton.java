@@ -11,8 +11,8 @@ import Armes.Arme;
  * @author 33604
  */
 public class Baton extends Arme{
-    private int age;
-    public Baton( String nom, int Attaque, int age) {
+    private double age;
+    public Baton( String nom, int Attaque, double age) {
         super(nom, Attaque);
         this.age = age;
         if (age < 100){
@@ -21,7 +21,7 @@ public class Baton extends Arme{
             this.age = 99;
         }
     }
-    public int AgeBaton(){
+    public double AgeBaton(){
         return age;
     }
     @Override
