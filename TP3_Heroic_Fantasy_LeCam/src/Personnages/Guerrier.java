@@ -4,6 +4,8 @@
  */
 package Personnages;
 
+import Armes.Baton;
+
 /**
  *
  * @author 33604
@@ -34,5 +36,9 @@ public class Guerrier extends Personnage {
     @Override
     public String toString() {
         return super.toString() + ", Guerrier{" + "aCheval=" + aCheval + ", deplacement='" + deplacement + '\'' + '}';
+    }
+
+    public void equiperArme(Baton EdgeOfTaixuan) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
