@@ -4,6 +4,8 @@
  */
 package Personnages;
 
+import Armes.Baton;
+
 /**
  *
  * @author 33604
@@ -35,6 +37,10 @@ public class Magicien extends Personnage {
     @Override
     public String toString() {
         return super.toString() + ", Magicien{" + "confirme=" + confirme + ", palier=" + palier + '}';
+    }
+
+    public void equiperArme(Baton Chene) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
 
